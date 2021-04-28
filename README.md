@@ -1,2 +1,2 @@
 # TV_show_organizer
-organize tv show files 
+Move tv show files from individual folders into /title/season/episodes/ format. 
