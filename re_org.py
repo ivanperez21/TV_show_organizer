@@ -1,23 +1,29 @@
 #!/usr/bin/env python3
 import os
 
-#get current director
-print(os.getcwd())
 
-#change directory to ...
-os.chdir('/home/ivanperez/Projects/')
+#input for working dir
+root_path = input("Provide path to files:\n")
+#allow linux relative file path i.e. ~/
+os.chdir(os.path.expanduser(root_path))
+print(root_path)
+#reset path variable to relative path
+root_path = os.getcwd()
 
-# list files and folders in current directory
-print(os.listdir())
+exten = '.mkv'
 
-#makes subdirectory if parent directory doesn't exist
-#os.makedirs('makedirs_test_2/subdir1')
+#function of video file extensions
+#def vid_files(vid_dir, vid_exten=['avi', 'mp4', 'mkv', 'mov']):
+#    ''' Print files in vid_dir with extensions in vid_exten, recursively.'''
 
-#make one directory. if parent doesn't exist then it will fail. it expects parent and targets the last sub dir specified
-#os.mkdir('makedir_test_1')
-#os.mkdir('makedir_test_1/subdir1')
-
-print(os.listdir())
-
-os.rmdir('makedirs_test_2/')
-#os.removedirs('makedirs_test_2/subdir1')
+#check if file or Directory
+#if os.path.isfile()
+#walking directory
+print("******Start os walk**********")
+for dirpath, subdir, files in os.walk(root_path):
+    for name in files:
+        if name.endswith(exten):
+            print(name)
+    #print("files:", files)
+    print('*' * 25)
+print("******End os walk**********")
