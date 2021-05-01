@@ -26,3 +26,5 @@ for root, subdir, files in os.walk(root_path):
             for exten in VIDEO_EXTENSIONS:
                 video_filename = video_filename.strip(exten)
             print(video_filename.split('.'))
+#IDEA maybe just take the video file folder name and use it for the formatting.
+#Use if subdir has video file 1 level down then split and strip and regex...
