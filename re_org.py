@@ -19,12 +19,24 @@ for root, subdir, files in os.walk(root_path):
         if video_filename.endswith(VIDEO_EXTENSIONS):
             print(video_filename)
 print('*' * 80)
-#TODO: loop through each file and format the string to remove file extension and split on '.'
+
+#loop through each file and format the string to remove file extension and split on '.'
+#def vid_str():
 for root, subdir, files in os.walk(root_path):
     for video_filename in files:
         if video_filename.endswith(VIDEO_EXTENSIONS):
             for exten in VIDEO_EXTENSIONS:
                 video_filename = video_filename.strip(exten)
-            print(video_filename.split('.'))
-#IDEA maybe just take the video file folder name and use it for the formatting.
-#Use if subdir has video file 1 level down then split and strip and regex...
+            video_filename2 = ' '.join(video_filename.split('.'))
+            print(video_filename2)
+#            return video_filename2
+
+print('*' * 80)
+#print(vid_str)
+
+
+
+'''
+IDEA maybe just take the video file folder name and use it for the formatting.
+Use if subdir has video file 1 level down then split and strip and regex...
+'''
