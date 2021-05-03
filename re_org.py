@@ -21,7 +21,6 @@ def vid_file():
             if video_filename.endswith(VIDEO_EXTENSIONS):
                 print(video_filename)
 
-
 #loop through each file and format the string to remove file extension and split on '.'
 def vid_str():
     for root, subdir, files in os.walk(root_path):
@@ -45,8 +44,6 @@ save info to use in mkdir funct of season dir
 save tv show name before 'S0xE0x' to use in mkdir funct of series dir.
 '''
 
-
-
 test_str = 'Kims Convenience S05E05 A Tangled Web 1080p iT WEB-DL DD5 1 H264-KiMCHi'
 season = re.compile(r'S\d+')
 episode = re.compile(r'E\d+')
@@ -63,7 +60,6 @@ print(re.split(season, test_str))
 '''
 this doesn't work. python doesn't see vid_str as a string i guess.
 maybe need to loop it? or find a way to go through it line by line?
-
 '''
 #print(re.split(season, vid_str()))
 
