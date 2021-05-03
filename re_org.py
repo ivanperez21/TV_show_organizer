@@ -59,6 +59,7 @@ for match in season.finditer(test_str):
 #prints index in form of '(x, y)'
 print(match.span())
 print(re.split(season, test_str))
+
 '''
 this doesn't work. python doesn't see vid_str as a string i guess.
 maybe need to loop it? or find a way to go through it line by line?
