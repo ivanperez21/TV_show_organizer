@@ -19,7 +19,8 @@ def vid_file():
     for root, subdir, files in os.walk(root_path):
         for video_filename in files:
             if video_filename.endswith(VIDEO_EXTENSIONS):
-                print(video_filename)
+                yield video_filename
+
 
 #loop through each file and format the string to remove file extension and split on '.'
 def vid_str():
@@ -29,13 +30,13 @@ def vid_str():
                 for exten in VIDEO_EXTENSIONS:
                     video_filename = video_filename.strip(exten)
                 video_filename = ' '.join(video_filename.split('.'))
-                print(video_filename)
+                yield video_filename #also can try os.path.join(video_filename)
 
-vid_file()
-print(type(vid_file()))
+vid_file_list = list(vid_file())
+print(vid_file_list)
 print('*' * 80)
-vid_str()
-print(type(vid_str()))
+vid_str_list = list(vid_str())
+print(vid_str_list)
 print('*' * 80)
 
 '''
@@ -49,13 +50,14 @@ season = re.compile(r'S\d+')
 episode = re.compile(r'E\d+')
 #season_split = re.split(r'S\d+')
 
-matches = season.finditer(test_str)
+matches = season.finditer(str(vid_str_list))
 #print start,stop index location. group=text found
-for match in season.finditer(test_str):
+for match in season.finditer(str(vid_str_list)):
     print(match.start(), match.end(), match.group())
 #prints index in form of '(x, y)'
+print('*' * 80)
 print(match.span())
-print(re.split(season, test_str))
+print(re.split(season, str(vid_str_list)))
 
 '''
 this doesn't work. python doesn't see vid_str as a string i guess.
