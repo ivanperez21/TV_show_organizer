@@ -2,7 +2,7 @@
 import os
 import re
 
-#list with all file extention
+#list with all file extension
 VIDEO_EXTENSIONS = ('.wmv', '.avi', '.mkv', '.mp4', '.mpg', '.mpeg', '.mov')
 
 #input for working dir
@@ -45,13 +45,13 @@ save info to use in mkdir funct of season dir
 save tv show name before 'S0xE0x' to use in mkdir funct of series dir.
 '''
 
-test_str = 'Kims Convenience S05E05 A Tangled Web 1080p iT WEB-DL DD5 1 H264-KiMCHi'
 season = re.compile(r'S\d+')
 episode = re.compile(r'E\d+')
 #season_split = re.split(r'S\d+')
 
+
 matches = season.finditer(str(vid_str_list))
-#print start,stop index location. group=text found
+#print (start,stop) index location followed by group=text found
 for match in season.finditer(str(vid_str_list)):
     print(match.start(), match.end(), match.group())
 #prints index in form of '(x, y)'
@@ -59,18 +59,16 @@ print('*' * 80)
 print(match.span())
 print(re.split(season, str(vid_str_list)))
 
-'''
-this doesn't work. python doesn't see vid_str as a string i guess.
-maybe need to loop it? or find a way to go through it line by line?
-'''
-#print(re.split(season, vid_str()))
-
-#make series and season dir from input of ...
-#def mk_shw_dir(series, season):
-#    os.mkdir
-#if-elif-else folder already exists then break/cancel making duplicate folder
 
 '''
 IDEA maybe just take the video file folder name and use it for the formatting.
 Use if subdir has video file 1 level down then split and strip and regex...
 '''
+
+# TODO make directory of given show name
+
+# TODO make directory of given season name
+
+# TODO move video files to its appropriate season directory
+
+# TODO function that defines what season a video file belongs to
