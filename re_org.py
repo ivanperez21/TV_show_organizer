@@ -66,7 +66,11 @@ Use if subdir has video file 1 level down then split and strip and regex...
 '''
 
 # TODO make directory of given show name
-
+# print series name and strip or remove all other parts after season #
+'''
+series = str(vid_str_list.partition)
+print(series)
+'''
 # TODO make directory of given season name
 
 # TODO move video files to its appropriate season directory
