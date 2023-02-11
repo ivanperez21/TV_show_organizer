@@ -30,7 +30,7 @@ def vid_str():
                 for exten in VIDEO_EXTENSIONS:
                     video_filename = video_filename.strip(exten)
                 video_filename = ' '.join(video_filename.split('.'))
-                yield video_filename #also can try os.path.join(video_filename)
+                yield video_filename #also can try os.path.join(vi    for root, sub    for root, subdir, files in os.walk(rdir, files in os.walk(rdeo_filename)
 
 vid_file_list = list(vid_file())
 print(vid_file_list)
